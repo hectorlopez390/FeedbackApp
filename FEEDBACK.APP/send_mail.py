@@ -16,6 +16,6 @@ def send_mail(customer, dealer, rating, comments):
     msg['To'] = receiver_email
 
     #send email
-    with smtplib.SMPTP(smtp_server, port) as server:
+    with smtplib.SMTP(smtp_server, port) as server:
         server.login(login, password)
         server.sendmail(sender_email, receiver_email, msg.as_string())
